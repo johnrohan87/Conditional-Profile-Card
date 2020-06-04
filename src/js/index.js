@@ -76,13 +76,35 @@ function render(variables = {}) {
     sm_position = "position-left";
   }
 
+  //Role, City, Country
+  if (variables.role == null) {
+    var _role = "Web Developer";
+  } else {
+    _role = variables.role;
+  }
+  if (variables.city == null) {
+    var _city = "Miami";
+  } else {
+    _city = variables.city;
+  }
+  if (variables.city == null) {
+    var _city = "Miami";
+  } else {
+    _city = variables.city;
+  }
+  if (variables.country == null) {
+    var _country = "USA";
+  } else {
+    _country = variables.country;
+  }
+
   // reset the website body with the new html output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
           <h1>${f_name} ${l_name}</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
+          <h2>${_role}</h2>
+          <h3>${_city}, ${_country}</h3>
           <ul class="${sm_position}">
             <li><a href="https://twitter.com/${_twitter}"><i class="fa fa-twitter"></i></a></li>
             <li><a href="https://github.com/${_github}"><i class="fa fa-github"></i></a></li>
